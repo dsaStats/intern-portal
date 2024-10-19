@@ -4,24 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin.css"> 
 </head>
 <body>
-    <nav class="navbar">
-        <img src="dsaStatsLogo.png" alt="dsaStatsLogo">
-        <div class="profile-div">
-        <h3>Hello, User</h3>
-        <img src="#" alt="user image">
-        </div>
-    </nav>
+
+    
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+
+   
     <div class="container">
-    <aside class="Request">
-        <p>rerquest </p>
-    </aside>
-    <aside class="intern list">
-        <p>Intern list</p>
-    </aside>
-</div>
-<footer>Made with ❤️ by Team dsaStats</footer>
+        
+        <h2>Employee and Intern Overview</h2>
+
+        <button class="add-btn" onclick="openForm()">Add New Employee/Intern</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Project</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="employee-table">
+                <tr>
+                    <td>Ankit</td>
+                    <td>Software Engineer</td>
+                    <td>Project Alpha</td>
+                    <td>Active</td>
+                </tr>
+                <tr>
+                    <td>Kavya</td>
+                    <td>Intern</td>
+                    <td>Project Beta</td>
+                    <td>Inactive</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Add Employee/Intern Form (Popup) -->
+        <div class="popup" id="popupForm">
+            <h3>Add New Employee/Intern</h3>
+            <form onsubmit="addEmployee(); return false;">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="text" id="role" placeholder="Role" required>
+                <input type="text" id="project" placeholder="Project" required>
+                <input type="text" id="status" placeholder="Status" required>
+                <button type="submit">Add</button>
+                <button type="button" class="close-btn" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Admin Dashboard &copy; 2024</p>
+    </footer>
+
+    
+    <script>
+        function openForm() {
+            document.getElementById("popupForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("popupForm").style.display = "none";
+        }
+
+        function addEmployee() {
+            var name = document.getElementById("name").value;
+            var role = document.getElementById("role").value;
+            var project = document.getElementById("project").value;
+            var status = document.getElementById("status").value;
+
+            var table = document.getElementById("employee-table");
+            var row = table.insertRow();
+            row.insertCell(0).innerHTML = name;
+            row.insertCell(1).innerHTML = role;
+            row.insertCell(2).innerHTML = project;
+            row.insertCell(3).innerHTML = status;
+
+            document.getElementById("name").value = "";
+            document.getElementById("role").value = "";
+            document.getElementById("project").value = "";
+            document.getElementById("status").value = "";
+
+            closeForm();
+        }
+    </script>
+
 </body>
 </html>

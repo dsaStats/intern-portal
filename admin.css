@@ -1,1 +1,113 @@
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.container {
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+
+.add-btn {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.add-btn:hover {
+    background-color: #218838;
+}
+
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #ddd;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup form input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.popup form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.popup form button:hover {
+    background-color: #0056b3;
+}
+
+.close-btn {
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
