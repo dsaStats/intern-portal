@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+.intern-project-side {
+    height: 100vh;
+    width: 100%;
+    background-color: antiquewhite;
+}
+
+.intern-project-side-headline {
+    font-size: 50px;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    padding: 60px 50px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.intern-projects {
+    margin-top: 30px;
+    overflow-y: hidden;
+    padding: 10px;
+    overflow-x: visible;
+    scroll-snap-type: x mandatory;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    display: inline-flex;
+    animation: scroll 100s linear infinite;
+    animation-fill-mode: forwards;
+    animation-delay: 12s;
+}
+
+.intern-projects::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.project_card {
+    flex: 0 0 auto;
+    width: 225px;
+    height: 325px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 30px;
+    padding: 10px;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+}
+
+#project_card-1 {
+    margin-left: 30px;
+}
+
+.project_card img {
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.project_card-button {
+    padding: 5px;
+    color: black;
+    background-color: white;
+    float: right;
+    margin: -5px 5px 0px 0px;
+    border-radius: 7px;
+}
+
+.project_card-button:hover {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+.project_card-title {
+    font-size: 24px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-weight: 1000;
+}
+
+.project_card-title:hover {
+    color: rgb(132, 0, 0);
+}
+
+.project_card-description {
+    font-size: 15px;
+    color: #666;
+    margin: -1px 0;
+}
