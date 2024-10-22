@@ -1,1 +1,173 @@
+/* admin.css */
 
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: rgb(241, 241, 239);
+  color: rgb(142, 142, 142);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Navigation Styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(93, 175, 171);
+  width: 100%;
+  padding: 1rem;
+  z-index: 3;
+  position: relative;
+  color: rgb(0, 0, 0);
+  margin-top: 0.4rem;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.nav-links a {
+  color: #2b1919;
+  text-decoration: none;
+}
+
+nav ul li:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 30px;
+  background-color: rgb(133, 122, 122);
+}
+
+/* Header Styles */
+header {
+  background: #292929;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Section Styles */
+.sections-container {
+  border-left: 3px;
+  display: flex; /* Use Flexbox for side-by-side layout */
+  justify-content: space-between; /* Space between the sections */
+  margin: 20px 0;
+}
+
+section {
+  margin-left:7%;
+background: #fff;
+padding: 20px;
+margin-right: 20px; /* Space between sections */
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+flex: 1; /* Allow sections to grow equally */
+}
+
+/* margin for the last section */
+section:last-child {
+margin-left:7%;
+margin-right:7%;
+}
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: #606469;
+  color: #fff;
+}
+
+/* Button Styles */
+.accept-button {
+  background: #0ba730;
+  color: white;
+  border: none;
+  padding: 7px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.accept-button:hover {
+  background: #1f7c33;
+}
+.deny-button {
+  background: #d83535;
+  color: white;
+  border: none;
+  padding: 7px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.deny-button:hover {
+  background: #882421;
+}
+button {
+  background: #5b9915;
+  color: rgb(253, 253, 253);
+  border:none;
+  padding: 7px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+button:hover {
+  background: #216d27;
+}
+/* Form Styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"], select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #333;
+  color: #fff;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

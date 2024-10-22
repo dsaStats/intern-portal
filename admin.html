@@ -3,25 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
     <link rel="stylesheet" href="admin.css">
+    <title>Admin Portal</title>
 </head>
 <body>
-    <nav class="navbar">
-        <img src="dsaStatsLogo.png" alt="dsaStatsLogo">
-        <div class="profile-div">
-        <h3>Hello, User</h3>
-        <img src="#" alt="user image">
-        </div>
-    </nav>
     <div class="container">
-    <aside class="Request">
-        <p>rerquest </p>
-    </aside>
-    <aside class="intern list">
-        <p>Intern list</p>
-    </aside>
-</div>
-<footer>Made with ❤️ by Team dsaStats</footer>
+        <nav>
+            <div class="logo">
+                <h1>Admin Portal</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#requests">Pending Requests</a></li>
+                <li><a href="#interns">Employee List</a></li>
+            </ul>
+        </nav>
+
+        <header>
+            <h2>Welcome to the Admin Portal</h2>
+        </header>
+
+        <div class="sections-container">
+            <section id="requests">
+                <h2>Pending Requests</h2>
+                <div class="requests-container">
+                    <table id="requests-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Role</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Jane Smith</td>
+                                <td>Intern</td>
+                                <td>
+                                    <button class="accept-button">Accept</button>
+                                    <button class="deny-button">Deny</button>
+                                </td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="interns">
+                <h2>Employee and Intern List</h2>
+                <div class="interns-container">
+                    <table id="interns-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Role</th>
+                                <th>Project</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="profile.html?id=1">John Doe</a></td>
+                                <td>Full Stack Developer</td>
+                                <td>Project A</td>
+                                <td>Active</td>
+                            </tr>
+                            <tr>
+                                <td><a href="profile.html?id=2">Jane Smith</a></td>
+                                <td>Intern</td>
+                                <td>Project B</td>
+                                <td>Active</td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+                <button id="add-button">Add New Employee/Intern</button>
+    
+                <div class="table-container" id="form-container" style="display:none;">
+                    
+                    <form id="add-form">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="role">Role:</label>
+                            <select id="role" required>
+                                <option value="Backend">Backend</option>
+                                <option value="Frontend">Frontend</option>
+                                <option value="Full Stack">Full Stack</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="project">Project:</label>
+                            <input type="text" id="project" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="status">Status:</label>
+                            <input type="text" id="status" required>
+                        </div>
+                        
+                        <button type="submit">Add</button>
+                        <button type="button" id="cancel-button">Cancel</button>
+                    </form>
+                </div>
+            </section>
+        </div>              
+
+        <footer>
+            <p>&copy; 2023 Admin Portal. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Event listener for the "Add" button to display the form
+document.getElementById('add-button').addEventListener('click', function() {
+  document.getElementById('form-container').style.display = 'block';
+});
+
+// Event listener for the "Cancel" button to hide the form
+document.getElementById('cancel-button').addEventListener('click', function() {
+  document.getElementById('form-container').style.display = 'none';
+});
+
+// Event listener for the form submission
+document.getElementById('add-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Get the values from the form fields
+  const name = document.getElementById('name').value;
+  const role = document.getElementById('role').value;
+  const project = document.getElementById('project').value;
+  const status = document.getElementById('status').value;
+
+  // Mock function to simulate saving to the database
+  saveToDatabase(name, role, project, status)
+      .then(response => {
+          if (response.success) {
+              // Add the new entry to the table
+              const tableBody = document.querySelector('#overview-table tbody');
+              const newRow = tableBody.insertRow();
+              newRow.innerHTML = `<td>${name}</td><td>${role}</td><td>${project}</td><td>${status}</td>`;
+              
+              // Reset the form and hide it
+              document.getElementById('add-form').reset();
+              document.getElementById('form-container').style.display = 'none';
+          } else {
+              alert('Error saving data: ' + response.message);
+          }
+      })
+      .catch(error => {
+          alert('Error: ' + error.message);
+      });
+});
+
+// Mock function to simulate saving data to a database
+function saveToDatabase(name, role, project, status) {
+  return new Promise((resolve) => {
+      // Simulating a database save with a timeout
+      setTimeout(() => {
+          // Here you would typically make an API call to save the data
+          // For this example, we just resolve the promise as successful
+          resolve({ success: true });
+      }, 500); // Simulate a delay of 500ms
+  });
+}
+    </script>
 </body>
 </html>
