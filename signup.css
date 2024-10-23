@@ -1,96 +1,68 @@
 body {
-    background: linear-gradient(135deg, #ff6b6b, #f7d94c);
-    font-family: "Arial", sans-serif;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .container {
-    width: 350px;
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    text-align: center;
-  }
-  
-  h2 {
-    color: #333;
-    text-align: center;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-    width: 95%;
-    height: 3rem;
-    padding: 0.4em;
-    border: 2px solid #ff6b6b;
-    border-radius: 10px;
-    transition: border-color 0.3s;
-    font-size: 1rem;
-    margin-top: 0.3em;
-    color: #ff6b6b;
-  }
-  
-  input[type="text"]:focus,
-  input[type="email"]:focus,
-  input[type="password"]:focus {
-    border-color: #f7d94c;
-    outline: none;
-  }
-  
-  button {
-    width: 100%;
-    height: 45px;
-    background-color: #ff6b6b;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-    letter-spacing: 0.3em;
-  }
-  
-  button:hover {
-    background-color: #94d181;
-  }
-  
-  p {
-    margin-top: 15px;
-  }
-  
-  a {
-    color: #ff6b6b;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  label {
-    letter-spacing: 2px;
-    margin-left: 0.1rem;
-    color: #232020;
-  }
-  
-  .backdrop {
-    background: rgba(255, 255, 255, 0.3);
-    padding: 2rem;
-    border-radius: 2rem;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  }
-  form {
-    padding: 1rem;
-    border-radius: 1rem;
-  }
+  background: linear-gradient(135deg, #ff6b6b, #f7d94c);
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px; /* Added padding to prevent the button from being hidden */
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 350px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #ff6b6b;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  color: #ff6b6b;
+}
+
+input:focus {
+  border-color: #f7d94c;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 277px;
+}
+
+button:hover {
+  background-color: #94d181;
+}
+
+label, a {
+  color: #232020;
+}
+
+.backdrop {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 1rem;
+  border: solid 0.5px;
+  border-radius: 2rem;
+  backdrop-filter: blur(10px);
+}
