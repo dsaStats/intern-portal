@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+body {
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: rgb(12, 12, 12);
+  font-family: "Poppins", sans-serif;
+  color: #8e8e8e;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: 1rem;
+  position: relative;
+  z-index: 3;
+  color: rgb(255, 255, 255);
+}
+header .circle__1 {
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(137, 43, 226, 0.209);
+  background-position: center;
+  background-size: cover;
+  height: 25rem;
+  width: 25rem;
+  border-radius: 50%;
+  top: 45%;
+  left: 80%;
+  filter: blur(80px);
+  animation: animateCircle_1 15s infinite;
+}
+@keyframes animateCircle_1 {
+  0% {
+    width: 0%;
+    top: 0;
+  }
+  50% {
+    width: 100%;
+    top: 0;
+  }
+  100% {
+    width: 0%;
+    top: 100%;
+  }
+}
+
+header .circle__2 {
+  position: absolute;
+  z-index: -1;
+  background-color: rgba(149, 71, 159, 0.397);
+  background-position: center;
+  background-size: cover;
+  height: 25rem;
+  width: 25rem;
+  /* border-radius: 50%; */
+  bottom: 20%;
+  filter: blur(90px);
+  animation: animateCircle_2 15s infinite;
+}
+
+@keyframes animateCircle_2 {
+  0% {
+    width: 0%;
+    top: 0;
+  }
+  50% {
+    width: 70%;
+    top: 0;
+  }
+  100% {
+    width: 0%;
+    top: 10%;
+  }
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-left: 1rem;
+  list-style: none;
+  color: #2b023d;
+}
+nav ul li {
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: aliceblue;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+  overflow: visible;
+  transition: box-shadow, background-color 500ms ease-in-out;
+}
+nav ul li:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 30px;
+  background-color: rgb(244, 203, 253);
+}
+
+/* Profile Container */
+.profile-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  /* background-color: #1c1c1c; */
+  box-shadow: 2 2 2px rgba(124, 74, 152, 0.969);
+}
+
+.profile-card {
+  background-color: #2525256d;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 1px rgba(220, 174, 247, 0.969);
+  transition: all 0.1s ease;
+}
+
+.profile-card:hover {
+  box-shadow: 0 0 3px rgba(222, 214, 214, 0.4);
+}
+
+.profile-photo img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.profile-details {
+  margin-top: 1.5rem;
+}
+
+.profile-details h2 {
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-details p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+/* Profile Sections */
+.profile-sections {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.achievements,
+.social-links {
+  background-color: #2525256d;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 1px rgba(220, 174, 247, 0.969);
+  width: 300px;
+}
+
+.achievements h3,
+.social-links h3 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.achievements ul,
+.social-links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.achievements ul li,
+.social-links p {
+  margin: 0.8rem 0;
+}
+
+.add-btn {
+  background-color: #6508ad;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #2b023d;
+}
+
+a {
+  color: #925dfd;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  padding: 10rem;
+  text-align: center;
+}
