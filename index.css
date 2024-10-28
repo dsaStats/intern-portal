@@ -208,8 +208,13 @@ section .description {
   font-size: larger;
 }
 
-.dsaStats--keyword {
+.dsaStats--highlight {
   color: #cccc02cc;
+  transition: color 200ms ease-in-out ;
+}
+
+.dsaStats--highlight:hover{
+  color:#cccc02;
 }
 
 section .services {
