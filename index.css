@@ -214,6 +214,7 @@ section .description {
   transition: color 200ms ease-in-out ;
 }
 
+/* Brightens the highlight  */
 .dsaStats--highlight:hover{
   color:#cccc02;
 }
