@@ -208,6 +208,7 @@ section .description {
   font-size: larger;
 }
 
+/* DSAstas highlight keywords */
 .dsaStats--highlight {
   color: #cccc02cc;
   transition: color 200ms ease-in-out ;
