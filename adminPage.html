@@ -1,368 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px 0;
-            background-color: #f4f4f4;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px 0;
+        background-color: #f4f4f4;
+      }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: transparent;
-            padding: 10px 20px;
-            position: relative;
-            z-index: 1000;
-        }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: transparent;
+        padding: 10px 20px;
+        position: relative;
+        z-index: 1000;
+      }
 
-        .navbar img {
-            height: 50px; 
-        }
+      .navbar img {
+        height: 50px;
+      }
 
-        .navbar .menu {
-            display: flex;
-            gap: 20px; 
-            align-items: center; 
-        }
+      .navbar .menu {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
 
-        .navbar a {
-            text-decoration: none;
-            color: #333;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
+      .navbar a {
+        text-decoration: none;
+        color: #333;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
 
-        .navbar a:hover {
-            background-color: rgba(0, 123, 255, 0.1);
-        }
+      .navbar a:hover {
+        background-color: rgba(0, 123, 255, 0.1);
+      }
 
-        .profile-div {
-            display: flex;
-            align-items: center;
-        }
+      .profile-div {
+        display: flex;
+        align-items: center;
+      }
 
-        .profile-div img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-left: 10px;
-        }
+      .profile-div img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-left: 10px;
+      }
 
-        .container {
-            display: flex;
-            max-width: 1200px;
-            margin: 20px auto;
-        }
+      .container {
+        display: flex;
+        max-width: 1200px;
+        margin: 20px auto;
+      }
 
-        .left-section {
-            width: 20%;
-            background: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            margin-right: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 20px; 
-        }
+      .left-section {
+        width: 20%;
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        margin-right: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 20px;
+      }
 
-        .central-section {
-            width: 60%;
-            background: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+      .central-section {
+        width: 60%;
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
 
-        .right-section {
-            width: 20%;
-            background: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            margin-left: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+      .right-section {
+        width: 20%;
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        margin-left: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
 
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
 
-        th {
-            background-color: #f2f2f2;
-        }
+      th {
+        background-color: #f2f2f2;
+      }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #fff;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
 
-        .sidebar {
-            display: block; 
-            position: sticky; 
-            top: 80px; 
-            width: 200px;
-            background-color: white;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
+      .sidebar {
+        display: block;
+        position: sticky;
+        top: 80px;
+        width: 200px;
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
 
-        .add-form {
-            display: none;
-            margin-top: 20px;
-        }
+      .add-form {
+        display: none;
+        margin-top: 20px;
+      }
 
-        .form-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
+      .form-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
 
-        .form-row input, .form-row select {
-            width: 48%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+      .form-row input,
+      .form-row select {
+        width: 48%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
 
-        .add-button {
-            margin-top: 10px;
-            padding: 10px 15px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+      .add-button {
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
 
-        .add-button:hover {
-            background-color: #0056b3;
-        }
+      .add-button:hover {
+        background-color: #0056b3;
+      }
 
-        .sidebar-option {
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
+      .sidebar-option {
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
 
-        .sidebar-option:hover {
-            background-color: rgba(0, 123, 255, 0.1);
-        }
-        .navbar img {
-            width: 100px;
-            height: auto; 
-            margin: 0 40px; 
-        } 
-        .add-form {
-            display: flex;
-            flex-direction: column; 
-            gap: 15px; 
-        }
-        
-        .form-row {
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .form-row input, .form-row select {
-            flex: 1;
-            margin-right: 10px; 
-        }
-        
-        .form-row input:last-child, .form-row select {
-            margin-right: 0; 
-        }
-               
+      .sidebar-option:hover {
+        background-color: rgba(0, 123, 255, 0.1);
+      }
+      .navbar img {
+        width: 100px;
+        height: auto;
+        margin: 0 40px;
+      }
+      .add-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .form-row {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .form-row input,
+      .form-row select {
+        flex: 1;
+        margin-right: 10px;
+      }
+
+      .form-row input:last-child,
+      .form-row select {
+        margin-right: 0;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
-        <img src="images/dsaStatsLogo.png" alt="dsaStatsLogo">
-        <div class="menu">
-            <a href="index.html">Home</a>
-            <a href="Teampage.html">About Us</a>
-            <a href="login.html">Login</a>
-        </div>
-        <div class="profile-div">
-            <h3>Hello, User</h3>
-            <img src="#" alt="user image">
-        </div>
+      <img src="images/dsaStatsLogo.png" alt="dsaStatsLogo" />
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="Teampage.html">About Us</a>
+        <a href="login.html">Login</a>
+      </div>
+      <div class="profile-div">
+        <h3>Hello, User</h3>
+        <img src="#" alt="user image" />
+      </div>
     </nav>
 
     <div class="container">
-        <aside class="left-section">
-            <div class="sidebar">
-                <h4>Options</h4>
-                <div class="sidebar-option" onclick="toggleAddForm()">Add new data in table</div>
-                <div class="sidebar-option">Add new Project</div>
-                <div class="sidebar-option">Build Team</div>
-                <div class="sidebar-option">Visualise Stats</div>
-            </div>
-        </aside>
+      <aside class="left-section">
+        <div class="sidebar">
+          <h4>Options</h4>
+          <div class="sidebar-option" onclick="toggleAddForm()">
+            Add new data in table
+          </div>
+          <div class="sidebar-option">Add new Project</div>
+          <div class="sidebar-option">Build Team</div>
+          <div class="sidebar-option">Visualise Stats</div>
+        </div>
+      </aside>
 
-        <section class="central-section">
-            <h2>Employee and Intern Overview</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Role</th>
-                        <th>Project</th>
-                        <th>Status</th>
-                        <th>Type</th>
-                    </tr>
-                </thead>
-                <tbody id="employeeTable">
-                    <tr>
-                        <td>John Doe</td>
-                        <td>Software Engineer</td>
-                        <td>Project Alpha</td>
-                        <td class="editable" onclick="editCell(this, ['Active', 'Inactive'])">Active</td>
-                        <td class="editable" onclick="editCell(this, ['Employee', 'Intern'])">Employee</td>
-                    </tr>
-                    <tr>
-                        <td>Jane Smith</td>
-                        <td>Data Analyst</td>
-                        <td>Project Beta</td>
-                        <td class="editable" onclick="editCell(this, ['Active', 'Inactive'])">Active</td>
-                        <td class="editable" onclick="editCell(this, ['Employee', 'Intern'])">Intern</td>
-                    </tr>
-                    <!-- Btw, Add real few names here, others can be added dynamically-->
-                </tbody>
-            </table>                                    
+      <section class="central-section">
+        <h2>Employee and Intern Overview</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Project</th>
+              <th>Status</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody id="employeeTable">
+            <tr>
+              <td>John Doe</td>
+              <td>Software Engineer</td>
+              <td>Project Alpha</td>
+              <td
+                class="editable"
+                onclick="editCell(this, ['Active', 'Inactive'])"
+              >
+                Active
+              </td>
+              <td
+                class="editable"
+                onclick="editCell(this, ['Employee', 'Intern'])"
+              >
+                Employee
+              </td>
+            </tr>
+            <tr>
+              <td>Jane Smith</td>
+              <td>Data Analyst</td>
+              <td>Project Beta</td>
+              <td
+                class="editable"
+                onclick="editCell(this, ['Active', 'Inactive'])"
+              >
+                Active
+              </td>
+              <td
+                class="editable"
+                onclick="editCell(this, ['Employee', 'Intern'])"
+              >
+                Intern
+              </td>
+            </tr>
+            <!-- Btw, Add real few names here, others can be added dynamically-->
+          </tbody>
+        </table>
 
-            <div class="add-form" id="addForm">
-                <h3>Add New Employee/Intern</h3>
-                <div class="form-row">
-                    <label for="typeSelect">Type:</label>
-                    <select id="typeSelect">
-                        <option value="Employee">Employee</option>
-                        <option value="Intern">Intern</option>
-                    </select>
-                </div>
-                <div class="form-row">
-                    <label for="roleSelect">Role:</label>
-                    <select id="roleSelect">
-                        <option value="Backend">Backend</option>
-                        <option value="Frontend">Frontend</option>
-                        <option value="Full Stack">Full Stack</option>
-                    </select>
-                </div>
-                <div class="form-row">
-                    <label for="nameInput">Name:</label>
-                    <input type="text" id="nameInput" placeholder="Name" required>
-                </div>
-                <div class="form-row">
-                    <label for="projectInput">Project:</label>
-                    <input type="text" id="projectInput" placeholder="Project" required>
-                </div>
-            
-                <div class="form-row">
-                    <label for="statusSelect">Status:</label>
-                    <select id="statusSelect">
-                        <option value="Active">Active</option>
-                        <option value="Inactive">Inactive</option>
-                    </select>
-                </div>
-                <button class="add-button" onclick="addNewEntry()">Add</button>
-            </div>
-                        
-        </section>
+        <div class="add-form" id="addForm">
+          <h3>Add New Employee/Intern</h3>
+          <div class="form-row">
+            <label for="typeSelect">Type:</label>
+            <select id="typeSelect">
+              <option value="Employee">Employee</option>
+              <option value="Intern">Intern</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="roleSelect">Role:</label>
+            <select id="roleSelect">
+              <option value="Backend">Backend</option>
+              <option value="Frontend">Frontend</option>
+              <option value="Full Stack">Full Stack</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="nameInput">Name:</label>
+            <input type="text" id="nameInput" placeholder="Name" required />
+          </div>
+          <div class="form-row">
+            <label for="projectInput">Project:</label>
+            <input
+              type="text"
+              id="projectInput"
+              placeholder="Project"
+              required
+            />
+          </div>
 
-        <aside class="right-section">
-            <p>piechart</p>
-        </aside>
+          <div class="form-row">
+            <label for="statusSelect">Status:</label>
+            <select id="statusSelect">
+              <option value="Active">Active</option>
+              <option value="Inactive">Inactive</option>
+            </select>
+          </div>
+          <button class="add-button" onclick="addNewEntry()">Add</button>
+        </div>
+      </section>
+
+      <aside class="right-section">
+        <p>piechart</p>
+      </aside>
     </div>
 
     <footer>Made with ❤️ by Team dsaStats &copy; 2024</footer>
 
     <script>
-        function editCell(cell, options) {
-            const currentValue = cell.innerText.trim();
-            const dropdown = document.createElement('select');
-            dropdown.classList.add('edit-dropdown');
+      function editCell(cell, options) {
+        const currentValue = cell.innerText.trim();
+        const dropdown = document.createElement("select");
+        dropdown.classList.add("edit-dropdown");
 
-            options.forEach(optionValue => {
-                const option = document.createElement('option');
-                option.value = optionValue;
-                option.textContent = optionValue;
-                if (optionValue === currentValue) {
-                    option.selected = true;
-                }
-                dropdown.appendChild(option);
-            });
-        
-            cell.innerHTML = '';
-            cell.appendChild(dropdown); 
-        
-            dropdown.focus();
-        
-            dropdown.addEventListener('change', function () {
-                cell.innerHTML = this.value; 
-            });
-        
-            dropdown.addEventListener('blur', function () {
-                cell.innerHTML = this.value; 
-            });
-        }
-                
-        function toggleSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.style.display = sidebar.style.display === 'none' ? 'block' : 'none';
-        }
+        options.forEach((optionValue) => {
+          const option = document.createElement("option");
+          option.value = optionValue;
+          option.textContent = optionValue;
+          if (optionValue === currentValue) {
+            option.selected = true;
+          }
+          dropdown.appendChild(option);
+        });
 
-        function toggleAddForm() {
-            const addForm = document.getElementById('addForm');
-            addForm.style.display = addForm.style.display === 'none' ? 'block' : 'none';
-        }
+        cell.innerHTML = "";
+        cell.appendChild(dropdown);
 
-        function addNewEntry() {
-            const type = document.getElementById('typeSelect').value;
-            const role = document.getElementById('roleSelect').value;
-            const name = document.getElementById('nameInput').value;
-            const project = document.getElementById('projectInput').value;
-            const status = document.getElementById('statusSelect').value;
-        
-            if (name && project && status) {
-                const table = document.getElementById('employeeTable');
-                const newRow = table.insertRow();
-        
-                newRow.innerHTML = `
+        dropdown.focus();
+
+        dropdown.addEventListener("change", function () {
+          cell.innerHTML = this.value;
+        });
+
+        dropdown.addEventListener("blur", function () {
+          cell.innerHTML = this.value;
+        });
+      }
+
+      function toggleSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display =
+          sidebar.style.display === "none" ? "block" : "none";
+      }
+
+      function toggleAddForm() {
+        const addForm = document.getElementById("addForm");
+        addForm.style.display =
+          addForm.style.display === "none" ? "block" : "none";
+      }
+
+      function addNewEntry() {
+        const type = document.getElementById("typeSelect").value;
+        const role = document.getElementById("roleSelect").value;
+        const name = document.getElementById("nameInput").value;
+        const project = document.getElementById("projectInput").value;
+        const status = document.getElementById("statusSelect").value;
+
+        if (name && project && status) {
+          const table = document.getElementById("employeeTable");
+          const newRow = table.insertRow();
+
+          newRow.innerHTML = `
                     <td>${name}</td>
                     <td class="editable" onclick="editCell(this, ['Backend', 'Frontend', 'Full Stack'])">${role}</td>
                     <td>${project}</td>
                     <td class="editable" onclick="editCell(this, ['Active', 'Inactive'])">${status}</td>
                     <td class="editable" onclick="editCell(this, ['Employee', 'Intern'])">${type}</td>
                 `;
-        
-                document.getElementById('typeSelect').value = 'Employee';
-                document.getElementById('roleSelect').value = 'Backend';
-                document.getElementById('nameInput').value = '';
-                document.getElementById('projectInput').value = '';
-                document.getElementById('statusSelect').value = 'Active';
-            }
+
+          document.getElementById("typeSelect").value = "Employee";
+          document.getElementById("roleSelect").value = "Backend";
+          document.getElementById("nameInput").value = "";
+          document.getElementById("projectInput").value = "";
+          document.getElementById("statusSelect").value = "Active";
         }
-        
+      }
     </script>
-</body>
+  </body>
 </html>

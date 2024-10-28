@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intern Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="signUp_BY_ANJALI.CSS" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>About Us</li>
+          <li>Contact</li>
+          <li>Careers</li>
+        </ul>
+      </nav>
+      <div class="circle__1"></div>
+      <div class="circle__2"></div>
+    </header>
+
+    <section class="login-container">
+      <div class="login-card">
+        <h2>Intern Portal Login</h2>
+        <form action="/login" method="POST">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+
+          <button type="submit" class="login-btn">Login</button>
+        </form>
+
+        <p class="forgot-password">
+          <a href="#">Forgot your password?</a>
+        </p>
+        <p class="sign-up">
+          Don’t have an account? <a href="#">Sign up here</a>
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
