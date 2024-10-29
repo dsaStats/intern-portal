@@ -1,0 +1,352 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --primary-color: #161b22;
+  --secondary-color: #0d1117;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: rgb(12, 12, 12);
+  font-family: "Poppins", sans-serif;
+  color: #8e8e8e;
+}
+
+/*  ************************** Navigation ************************** */
+header .circle__1 {
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(137, 43, 226, 0.209);
+  background-position: center;
+  background-size: cover;
+  height: 25rem;
+  width: 25rem;
+  border-radius: 50%;
+  top: 45%;
+  left: 80%;
+  filter: blur(80px);
+  animation: animateCircle_1 15s infinite;
+}
+@keyframes animateCircle_1 {
+  0% {
+    width: 0%;
+    top: 0;
+  }
+  50% {
+    width: 100%;
+    top: 0;
+  }
+  100% {
+    width: 0%;
+    top: 100%;
+  }
+}
+
+header .circle__2 {
+  position: absolute;
+  z-index: -1;
+  background-color: rgba(149, 71, 159, 0.397);
+  background-position: center;
+  background-size: cover;
+  height: 25rem;
+  width: 25rem;
+  /* border-radius: 50%; */
+  bottom: 20%;
+  filter: blur(90px);
+  animation: animateCircle_2 15s infinite;
+}
+
+@keyframes animateCircle_2 {
+  0% {
+    width: 0%;
+    top: 0;
+  }
+  50% {
+    width: 70%;
+    top: 0;
+  }
+  100% {
+    width: 0%;
+    top: 10%;
+  }
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: 1rem;
+  /* position: relative; */
+  z-index: 3;
+  color: rgb(255, 255, 255);
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-left: 1rem;
+  list-style: none;
+  width: 100%;
+  color: #2b023d;
+}
+
+nav ul li {
+  font-size: 1rem;
+  width: 100%;
+  cursor: pointer;
+  background-color: aliceblue;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+  overflow: visible;
+  transition: box-shadow, background-color 500ms ease-in-out;
+}
+nav ul li:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 30px;
+  background-color: rgb(244, 203, 253);
+}
+
+/* ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+} */
+
+nav form {
+  width: 100%;
+}
+
+nav form input {
+  background: var(--secondary-color);
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #4a515d;
+  color: #fff;
+}
+
+nav form input::placeholder {
+  color: #fff;
+}
+
+/*  ************************** Header ************************** */
+header {
+  border-bottom: 0.6px solid #242424;
+}
+
+.active {
+  border-bottom: 2px solid rgb(186, 97, 222);
+  padding-bottom: 20px;
+  color: aliceblue;
+}
+
+header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  list-style: none;
+  margin: 20px;
+}
+
+.btns-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 2px;
+  width: 210px;
+  margin-left: 20px;
+}
+
+.btns-container button {
+  background-color: #6508ad;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+.btns-container button:hover {
+  background-color: #2b023d;
+}
+
+.profile-card {
+  background-color: #2525256d;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  transition: all 0.1s ease;
+}
+.profile-photo img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.188);
+}
+.profile-card:hover {
+  box-shadow: 0 0 3px rgba(222, 214, 214, 0.4);
+}
+.main-container {
+  display: flex;
+  margin-left: 12%;
+  margin-top: 2%;
+}
+
+/*  ************************** Header ************************** */
+.about-user {
+  width: 30%;
+  margin-left: 30px;
+  color: #fff;
+}
+
+.about-user .user-avatar {
+  background-image: url("https://avatars.githubusercontent.com/u/85052811?v=4");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  transform: translateY(-20px);
+  border-radius: 100%;
+}
+
+.user-name {
+  color: #585d63;
+  font-size: 20px;
+  margin: 10px 0;
+  font-weight: normal;
+}
+
+button.follow {
+  width: 70%;
+  background: #21262d;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 5px;
+  margin-bottom: 20px;
+}
+
+.followers-info {
+  margin: 15px 0;
+}
+
+.followers-info a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.followers-info span {
+  color: #545c66;
+}
+
+.company,
+.location,
+.blog,
+.twitter_username {
+  margin: 10px 0;
+  color: #dce9f7;
+  font-size: 13px;
+}
+
+/*  ************************** REPOSITORIES ************************** */
+main {
+  color: #fff;
+  margin-top: 20px;
+  margin-left: 1rem;
+}
+
+main p {
+  margin-bottom: 30px;
+}
+
+.repo-card {
+  border: 1px solid #4a515d;
+  border-radius: 5px;
+  background-color: #2525256d;
+  width: 43%;
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+  padding-top: 1.3rem;
+}
+
+.repo-title {
+  text-decoration: non;
+  color: #549ef3;
+  font-weight: 500;
+  margin-top: 3rem;
+  font-size: 13px;
+}
+
+.repo-subtitle {
+  font-size: 11px;
+  margin-top: 15px;
+  color: #868686;
+}
+
+.popularity {
+  display: flex;
+  color: #585c5e;
+}
+
+.stars {
+  margin-right: 20px;
+  color: #585c5e;
+}
+
+.repos {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pill {
+  border: 1px solid #4a515d;
+  color: #a3acbc;
+  width: 50px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 10px;
+  text-align: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/*  ************************** STYLING ICONS ************************** */
+.icon-container {
+  margin: 5px 0;
+}
+
+i {
+  color: #4a515d;
+  margin-right: 5px;
+}
+
+section.fork {
+  display: flex;
+  align-items: center;
+}
+
+.fork-svg {
+  width: 14px;
+  margin-bottom: 20px;
+  margin-right: 6px;
+}
